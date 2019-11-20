@@ -18,6 +18,12 @@ get '/play' do
   @p2_name = session[:p2_name]
   erb(:play)
 end
+
+get '/attack' do
+  @p1_name = session[:p1_name]
+  @p2_name = session[:p2_name]
+  erb(:attack)
+end
 # start the server if ruby file executed directly
   run! if app_file == $0
 end
