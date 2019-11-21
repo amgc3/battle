@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require 'sinatra'
+#require 'sinatra'
 # enable :sessions
 class Battle < Sinatra::Base
 enable :sessions
@@ -8,14 +8,17 @@ get '/' do
 end
 
 post '/names' do
-  session[:p1_name] = params[:p1_name]
-  session[:p2_name] = params[:p2_name]
+  # session[:p1_name] = params[:p1_name]
+  # session[:p2_name] = params[:p2_name]
+  # we use global variables to store sessions
+  $player1 = Player.new(params[:p1_name])
+  $player2 = Player.new(params[:p2_name])
   redirect '/play'
 end
 
 get '/play' do
-  @p1_name = session[:p1_name]
-  @p2_name = session[:p2_name]
+  @p1_name = $player1
+  @p2_name = $player2
   erb(:play)
 end
 
