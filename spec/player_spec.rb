@@ -9,4 +9,10 @@ describe '#name' do
   end
 end
 
+describe '#hit_points' do
+  it 'returns a player hit_points' do
+    expect(player.hit_points).to eq Player:: DEFAULT_HIT_POINTS
+  end
+end
+
 end
