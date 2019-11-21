@@ -18,14 +18,16 @@ post '/names' do
 end
 
 get '/play' do
-  @p1_name = $player1.name
-  @p2_name = $player2.name
+  @player1 = $player1
+  @player2 = $player2
   erb(:play)
 end
 
 get '/attack' do
-  @p1_name = $player1.name
-  @p2_name = $player2.name
+  @player1 = $player1
+  @player2 = $player2
+  @player1.attack(@player2)
+
   erb(:attack)
 end
 # start the server if ruby file executed directly
