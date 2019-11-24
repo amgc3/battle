@@ -23,11 +23,13 @@ get '/play' do
   erb(:play)
 end
 
+# I'm using a GET request with the /attack path
+# because I'm not changing the state of the program.
+
 get '/attack' do
   @player1 = $player1
   @player2 = $player2
   @player1.attack(@player2)
-
   erb(:attack)
 end
 # start the server if ruby file executed directly

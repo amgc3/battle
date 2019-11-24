@@ -1,3 +1,7 @@
-<%= @player1.name %> attacked <%= @player2.name %>
+<style>
+  body{background: linear-gradient(to right, rgba(147,184,116,0), rgba(147,184,116,1));}
+  </style>
+
+<h2><%= @player1.name %> attacked <%= @player2.name %></h2>
 <br>
-<%= @player2.name %>: <%=@player2.hit_points %>HP
+<h2><%= @player2.name %>: <%=@player2.hit_points %>HP</h2>
